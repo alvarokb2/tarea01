@@ -96,8 +96,6 @@ int main(int argc, char **argv) {
         }
     } else if (argc == 5) {
         if (strcmp(*(argv + 1), "-g") == 0) {
-            cout << "\n Exito";
-
             ValidarArgumentos(*(argv + 2),*(argv + 3),*(argv + 4));
                 
             ifstream flujo(*(argv + 4));
