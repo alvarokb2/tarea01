@@ -11,12 +11,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <validar.cpp>
+
 
 using namespace std;
 
 
-void ValidarArgumentos(char fechaInicio[32])
+bool ValidarArgumentos(char fechaInicio[32])
 {
     string fechai = fechaInicio;
     string aux;
@@ -28,11 +28,15 @@ void ValidarArgumentos(char fechaInicio[32])
         
         for(int i=0;i<fechai.length();i++)
         {
-            while(isdigit(fechai[i]))
+            if(!isdigit(fechai[i]))
             {
-                    
+                
+                cout << "no todo es digito";
+                return false;
             }
         }
+        cout <<"todos son digitos";
+        return true;
     }
 }
 
