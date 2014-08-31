@@ -90,9 +90,9 @@ int main(int argc, char **argv) {
 
     if (argc == 2) {
         if (strcmp(*(argv + 1), "-v") == 0) {
-            cout << "\nIntegrantes del Grupo";
+            cout << "Integrantes del Grupo" < endl;
         } else {
-            cout << "\nError: Si ingresa 1 argumento debe ser -v";
+            cout << "Error: Si ingresa 1 argumento debe ser -v" << endl;
         }
     } else if (argc == 5) {
         if (strcmp(*(argv + 1), "-g") == 0) {
@@ -113,12 +113,12 @@ int main(int argc, char **argv) {
             flujo.close();
 
         } else {
-            cout << "\nError: wefefewfef";
+            cout << "Error: Debe ingresar parametros\n  - prueba [-v | -g <yyyy-mm-dd> <yyyy-mm-dd> <archivo>.csv]" << endl;
         }
     } else {
-        cout << "\nError: Debe ingresar parametros\n  - prueba [-v | -g <yyyy-mm-dd> <yyyy-mm-dd> <archivo>.csv ]";
+        cout << "Error: Debe ingresar parametros\n  - prueba [-v | -g <yyyy-mm-dd> <yyyy-mm-dd> <archivo>.csv]" << endl;
     }
-    cout << "\n\n- End -\n";
+    cout << "\n- End -\n";
 
     return 0;
 }
