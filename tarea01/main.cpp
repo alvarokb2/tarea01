@@ -4,12 +4,7 @@
  *
  * Created on 31 de agosto de 2014, 17:08
  */
-/* 
- * File:   main.cpp
- * Author: Alvaro
- *
- * Created on 31 de agosto de 2014, 16:08
- */
+
 
 #include <iostream>
 #include <fstream>
