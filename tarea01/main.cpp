@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
 
             ifstream flujo(*(argv + 4));
 
-            ValidarArgumentos(*(argv + 2));
+            ValidarArgumentos(*(argv + 2),*(argv+3));
             char c = flujo.get();
             while (flujo.good()) {
                 cout << c;
