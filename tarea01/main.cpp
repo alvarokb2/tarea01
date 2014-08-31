@@ -25,6 +25,7 @@ int main(int argc, char **argv) {
             {
                 // Pipe:ingrese esta linea
                 ifstream flujo;
+                
                 ifstream flujo(*(argv + 4));
 
                 flujo.close();
