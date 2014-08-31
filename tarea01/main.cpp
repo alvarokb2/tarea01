@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
                     && *(argv + 5) == NULL) //verifica que se pasen 4 argumentos
             {
                 // Pipe:ingrese esta linea
-                ifstream flujo;
+                std::ifstream flujo;
                 
                 ifstream flujo(*(argv + 4));
 
