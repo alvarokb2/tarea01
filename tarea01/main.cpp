@@ -36,7 +36,8 @@ int main(int argc, char **argv) {
             cout << "\n Exito";
             
             ifstream flujo(*(argv + 4));
-                
+
+            ValidarArgumentos(*(argv +2));
             char c=flujo.get();
             while(flujo.good())
             {
