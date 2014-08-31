@@ -6,8 +6,7 @@
 
 using namespace std;
 
-void ValidarArgumentos(char fechaInicio[32])
-{
+
 void ValidarArgumentos(char fechaInicio[32])
 {
     string fechai = fechaInicio;
@@ -19,5 +18,4 @@ void ValidarArgumentos(char fechaInicio[32])
         fechai = aux.substr(0,8 );
         cout <<fechai;
     }
-}
 }
