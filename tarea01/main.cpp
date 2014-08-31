@@ -90,7 +90,7 @@ int main(int argc, char **argv) {
 
     if (argc == 2) {
         if (strcmp(*(argv + 1), "-v") == 0) {
-            cout << "Integrantes del Grupo" < endl;
+            cout << "Integrantes del Grupo" << endl;
         } else {
             cout << "Error: Si ingresa 1 argumento debe ser -v" << endl;
         }
