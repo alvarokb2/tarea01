@@ -64,11 +64,24 @@ bool ValidarArchivo(char archivo[64]){
 
 bool ValidarArgumentos(char f1[32],char f2[32], char archivo[64])
 {
-    if(ValidarFecha(f1) && ValidarFecha(f2) && ValidarArchivo(archivo)){
-        return true;
+    if(ValidarFecha(f1)){
+        if(ValidarFecha(f1)){
+            if(ValidarArchivo(archivo)){
+                
+            }
+            else{
+                cout <<"Tercer Argumento Invalido";
+                return false;
+            }
+        }
+        else{
+            cout <<"Primer Argumento Invalido";
+            return false;
+        }
     }
     else
     {
+        cout <<"Primer Argumento Invalido";
         return false;
     }
 }
