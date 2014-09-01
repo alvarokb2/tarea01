@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 
-
+//prueba
 using namespace std;
 
 bool ValidarFecha(char fechaInicio[32]) {
