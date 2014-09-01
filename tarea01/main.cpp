@@ -64,6 +64,7 @@ int main(int argc, char **argv) {
             ifstream flujo(*(argv + 4));
 
             ValidarFecha(*(argv + 2));
+            ValidarFecha(*(argv + 3));
             char c = flujo.get();
             while (flujo.good()) {
                 cout << c;
