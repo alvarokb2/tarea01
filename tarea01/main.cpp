@@ -95,8 +95,8 @@ int main(int argc, char **argv) {
             cout << "Error: Si ingresa 1 argumento debe ser -v" << endl;
         }
     } else if (argc == 5) {
-        if (strcmp(*(argv + 1), "-g") == 0) {
-            ValidarArgumentos(*(argv + 2),*(argv + 3),*(argv + 4));
+        if (strcmp(*(argv + 1), "-g") == 0 &&
+            ValidarArgumentos(*(argv + 2),*(argv + 3),*(argv + 4))) {
                 
             ifstream flujo(*(argv + 4));
             string str;
