@@ -30,6 +30,7 @@ using namespace std;
 //prueba
 using namespace std;
 
+
 bool ValidarFecha(char fechaInicio[32]) {
     string fechai = fechaInicio;
     string aux;
@@ -41,23 +42,18 @@ bool ValidarFecha(char fechaInicio[32]) {
 
             for (int i = 0; i < fechai.length(); i++) {
                 if (!isdigit(fechai[i])) {
-
-                    cout << "Las fechas solo pueden contener numeros y guiones en formato yyyy-mm-dd ";
                     return false;
                 }
             }
-            cout << "fecha ingresada correctamente";
             return true;
         }
         else{
-            cout << "Las fechas solo pueden contener numeros y guiones en formato yyyy-mm-dd ";
             return false;
         }
         
     }
     else
     {
-        cout << "Las fechas solo pueden contener numeros y guiones en formato yyyy-mm-dd ";
         return false;
     }
 }
@@ -67,12 +63,10 @@ bool ValidarArchivo(char archivo[64]){
     
     if(file.substr(file.length()-4)==".csv")
     {
-        cout <<"formato correcto";
         return true;
     }
     else
     {
-        cout <<"formato incorrecto";
         return false;
     }
 }
@@ -80,27 +74,30 @@ bool ValidarArchivo(char archivo[64]){
 bool ValidarArgumentos(char f1[32],char f2[32], char archivo[64])
 {
     if(ValidarFecha(f1)){
-        if(ValidarFecha(f1)){
+        if(ValidarFecha(f2)){
             if(ValidarArchivo(archivo)){
-                
+                return true;
             }
             else{
-                cout <<"Tercer Argumento Invalido";
+                cout <<"Tercer Argumento Invalido"<<endl;
+                cout <<"El archivo debe tener extension .csv"<<endl;
                 return false;
             }
         }
         else{
-            cout <<"Primer Argumento Invalido";
+            cout <<"Segundo Argumento Invalido"<<endl;
+            cout <<"Las fechas solo pueden contener numeros y guiones en formato yyyy-mm-dd"<<endl;
             return false;
         }
     }
     else
     {
-        cout <<"Primer Argumento Invalido";
+        
+        cout <<"Primer Argumento Invalido"<<endl;
+        cout <<"Las fechas solo pueden contener numeros y guiones en formato yyyy-mm-dd"<<endl;
         return false;
     }
 }
-
 int main(int argc, char **argv) {
     system("cls");
     cout << "- Tarea01 -\n\n -Contador de argumentos: " << argc << endl;
