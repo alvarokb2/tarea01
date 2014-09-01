@@ -15,7 +15,6 @@
 //prueba
 using namespace std;
 
-
 bool ValidarFecha(char fechaInicio[32]) {
     string fechai = fechaInicio;
     string aux;
@@ -90,7 +89,11 @@ int main(int argc, char **argv) {
 
     if (argc == 2) {
         if (strcmp(*(argv + 1), "-v") == 0) {
-            cout << "Integrantes del Grupo" < endl;
+                cout << "Integrantes del grupo de trabajo : " << endl;
+                cout << "1.Alvaro Cabedo Vásquez, rut:17.087.104-9" << endl;
+                cout << "2.Cristian Mondaca Ruiz , rut:15610050-1" << endl;
+                cout << "Fecha de compilacion: ";
+                puts(__DATE__);  //Fecha de compilacion.
         } else {
             cout << "Error: Si ingresa 1 argumento debe ser -v" << endl;
         }
@@ -107,10 +110,12 @@ int main(int argc, char **argv) {
                 str.append(&c);
                 c = flujo.get();
             }
+            
             cout << "Archivo: " << *(argv+4) << endl;
             cout << "  - Size  : " << str.size() << endl;
             cout << "  - Lines : " << count << endl;
             flujo.close();
+            
 
         } else {
             cout << "Error: Debe ingresar parametros\n  - prueba [-v | -g <yyyy-mm-dd> <yyyy-mm-dd> <archivo>.csv]" << endl;
