@@ -5,21 +5,6 @@
  * Created on 31 de agosto de 2014, 17:08
  */
 
-#include <iostream>
-#include <fstream>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
-//prueba
-using namespace std;
-/* 
- * File:   main.cpp
- * Author: Alvaro
- *
- * Created on 31 de agosto de 2014, 17:08
- */
-
 
 #include <iostream>
 #include <fstream>
