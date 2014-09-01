@@ -13,6 +13,22 @@
 
 //prueba
 using namespace std;
+/* 
+ * File:   main.cpp
+ * Author: Alvaro
+ *
+ * Created on 31 de agosto de 2014, 17:08
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+//prueba
+using namespace std;
 
 bool ValidarFecha(char fechaInicio[32]) {
     string fechai = fechaInicio;
@@ -37,6 +53,7 @@ bool ValidarFecha(char fechaInicio[32]) {
             cout << "Las fechas solo pueden contener numeros y guiones en formato yyyy-mm-dd ";
             return false;
         }
+        
     }
     else
     {
@@ -82,6 +99,42 @@ bool ValidarArgumentos(char f1[32],char f2[32], char archivo[64])
         cout <<"Primer Argumento Invalido";
         return false;
     }
+}
+
+int main(int argc, char **argv) {
+    system("cls");
+    cout << "- Tarea01 -\n\n -Contador de argumentos: " << argc << endl;
+
+    if (argc == 2) {
+        if (strcmp(*(argv + 1), "-v") == 0) {
+            cout << "\nIntegrantes del Grupo";
+        } else {
+            cout << "\nError: Si ingresa 1 argumento debe ser -v";
+        }
+    } else if (argc == 5) {
+        if (strcmp(*(argv + 1), "-g") == 0) {
+            cout << "\n Exito";
+
+            ValidarArgumentos(*(argv + 2),*(argv + 3),*(argv + 4));
+                
+            ifstream flujo(*(argv + 4));
+
+            char c = flujo.get();
+            while (flujo.good()) {
+                cout << c;
+                c = flujo.get();
+            }
+            flujo.close();
+
+        } else {
+            cout << "\nError: wefefewfef";
+        }
+    } else {
+        cout << "\nError: Debe ingresar parametros\n  - prueba [-v | -g <yyyy-mm-dd> <yyyy-mm-dd> <archivo>.csv ]";
+    }
+    cout << "\n\n- End -\n";
+
+    return 0;
 }
 
 int main(int argc, char **argv) {
