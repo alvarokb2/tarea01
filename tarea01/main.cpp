@@ -5,7 +5,6 @@
  * Created on 31 de agosto de 2014, 17:08
  */
 
-
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
@@ -38,7 +37,6 @@ bool ValidarFecha(char fechaInicio[32]) {
             cout << "Las fechas solo pueden contener numeros y guiones en formato yyyy-mm-dd ";
             return false;
         }
-        
     }
     else
     {
@@ -103,12 +101,17 @@ int main(int argc, char **argv) {
             ValidarArgumentos(*(argv + 2),*(argv + 3),*(argv + 4));
                 
             ifstream flujo(*(argv + 4));
-
+            string str;
+            int count=0;
             char c = flujo.get();
             while (flujo.good()) {
-                cout << c;
+                if(c=='\n')count++;
+                str.append(&c);
                 c = flujo.get();
             }
+            cout << "Archivo: " << *(argv+4) << endl;
+            cout << "  - Size  : " << str.size() << endl;
+            cout << "  - Lines : " << count << endl;
             flujo.close();
 
         } else {
