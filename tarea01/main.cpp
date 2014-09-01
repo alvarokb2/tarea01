@@ -47,6 +47,13 @@ bool ValidarFecha(char fechaInicio[32]) {
     }
 }
 
+bool ValidarArchivo(char archivo[64]){
+    string file = archivo;
+    string aux =".csv";
+    
+    
+}
+
 int main(int argc, char **argv) {
     system("cls");
     cout << "- Tarea01 -\n\n -Contador de argumentos: " << argc << endl;
