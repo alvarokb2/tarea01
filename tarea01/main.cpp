@@ -15,35 +15,35 @@
 
 using namespace std;
 
-bool ValidarArgumentos(char fechaInicio[32], char fechaTermino[32]) {
+bool ValidarFecha(char fechaInicio[32]) {
     string fechai = fechaInicio;
-    string fechat = fechaTermino;
     string aux;
-    if (fechai.length() == 10 && fechai.substr(4, 1) == "-" && fechai.substr(7, 1) == "-") {
-        aux = fechai.substr(0, 4) + fechai.substr(5, 2) + fechai.substr(8, 2);
-        fechai = aux.substr(0, 8);
-        cout << fechai;
+    if (fechai.length() == 10) {
+        if (fechai.substr(4, 1) == "-" && fechai.substr(7, 1) == "-") {
 
-        for (int i = 0; i < fechai.length(); i++) {
-            if (!isdigit(fechai[i])) {
+            aux = fechai.substr(0, 4) + fechai.substr(5, 2) + fechai.substr(8, 2);
+            fechai = aux.substr(0, 8);
 
-                cout << "fecha 1 incorrecta";
-                return false;
+            for (int i = 0; i < fechai.length(); i++) {
+                if (!isdigit(fechai[i])) {
+
+                    cout << "Las fechas solo pueden contener numeros y guiones en formato yyyy-mm-dd ";
+                    return false;
+                }
             }
+            cout << "fecha ingresada correctamente";
+            return true;
         }
-    } else if (fechat.length() == 10 && fechat.substr(4, 1) == "-" && fechai.substr(7, 1) == "-") {
-        aux = fechat.substr(0, 4) + fechat.substr(5, 2) + fechat.substr(8, 2);
-        fechat = aux.substr(0, 8);
-        cout << fechat;
-
-        for (int i = 0; i < fechat.length(); i++) {
-            if (!isdigit(fechat[i])) {
-
-                cout << "fecha 2 incorrecta";
-                return false;
-            }
+        else{
+            cout << "Las fechas solo pueden contener numeros y guiones en formato yyyy-mm-dd ";
+            return false;
         }
-
+        
+    }
+    else
+    {
+        cout << "Las fechas solo pueden contener numeros y guiones en formato yyyy-mm-dd ";
+        return false;
     }
 }
 
@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
 
             ifstream flujo(*(argv + 4));
 
-            ValidarArgumentos(*(argv + 2),*(argv+3));
+            ValidarFecha(*(argv + 2));
             char c = flujo.get();
             while (flujo.good()) {
                 cout << c;
