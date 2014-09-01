@@ -49,9 +49,28 @@ bool ValidarFecha(char fechaInicio[32]) {
 
 bool ValidarArchivo(char archivo[64]){
     string file = archivo;
-    string aux =".csv";
     
-    
+    if(file.substr(file.length()-4)==".csv")
+    {
+        cout <<"formato correcto";
+        return true;
+    }
+    else
+    {
+        cout <<"formato incorrecto";
+        return false;
+    }
+}
+
+bool ValidarArgumentos(char f1[32],char f2[32], char archivo[64])
+{
+    if(ValidarFecha(f1) && ValidarFecha(f2) && ValidarArchivo(archivo)){
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 int main(int argc, char **argv) {
@@ -68,10 +87,10 @@ int main(int argc, char **argv) {
         if (strcmp(*(argv + 1), "-g") == 0) {
             cout << "\n Exito";
 
+            ValidarArgumentos(*(argv + 2),*(argv + 3),*(argv + 4));
+                
             ifstream flujo(*(argv + 4));
 
-            ValidarFecha(*(argv + 2));
-            ValidarFecha(*(argv + 3));
             char c = flujo.get();
             while (flujo.good()) {
                 cout << c;
